@@ -1,14 +1,14 @@
-# path <- "E:/Clouds/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData/avebyn"
-# path2 <- "E:/Clouds/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData"
-path <- "D:/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData/avebyn"
-
-path2 <- "D:/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData"
+path <- "E:/Clouds/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData/avebyn"
+path2 <- "E:/Clouds/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData"
+# path <- "D:/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData/avebyn"
+# 
+# path2 <- "D:/OneDrive - g.ecc.u-tokyo.ac.jp/LEP/2019/現行資料/0802春季モンゴル解析2/OriginalData"
 setwd(path)
 
 averate <- c("60","180","300","600","1800")
 
 d.flist <- list.files(path, pattern="csv")
-d.flist300 <- d.flist[grep(averate,d.flist)]
+# d.flist300 <- d.flist[grep(averate,d.flist)]
 
 pc.col = 4
 wm.col = 6
@@ -16,7 +16,7 @@ wm.col = 6
 n <- 3 + pc.col + wm.col*1.5 
 
 
-######全サイトデータ結合########################################
+######全サイトデータ結合######################################## 
 for(k in 1 : length(averate)){
   d.flist300 <- d.flist[grep(paste(averate[k],"_",sep=""),d.flist)]
   result.df <- data.frame(matrix(rep(NA, n), nrow=1))[numeric(0), ]
